@@ -43,7 +43,7 @@ function Paymutf() {
   return (
     <div>
 
-<div className="login">
+    <div className="login">
           <div className='PayIndHeading'>Payments in Mutual Fund</div>
         <form onSubmit={handleSubmit}>
 

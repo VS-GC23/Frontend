@@ -43,3 +43,30 @@
 .uploadstat div, .userinsightbox div{
     padding: 5vh 10px;
 }
+.HistIndWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+.IndTransac{
+    font-size: 1.4rem;
+    font-weight:600;
+    margin: 10px 0;
+}
+.HistoryPayment{
+    font-size: 1.3rem;
+    margin: 10px;
+    border: 1.5px solid grey;
+    padding: 5px;
+    border-radius: 10px;
+}
+.HistIndWrapper{
+    height:200px;
+    overflow-y: scroll;
+}
+.histindpay{
+    margin: 3px;
+    font-weight: 500;
+}

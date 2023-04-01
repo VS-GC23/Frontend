@@ -10,7 +10,6 @@ import Payins from './Payins';
 function DashPayment() {
 
   const [options, setOptions] = useState(1);
-  // document.getElementById(`payboxele${options}`).style.backgroundColor = "#96b2ce";
 
   return (
     <div className='DashPaywrapper'>

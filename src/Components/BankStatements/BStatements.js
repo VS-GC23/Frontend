@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import "./BankStatement.css"
 
 function BStatements() {
   return (
@@ -28,7 +29,7 @@ function BStatements() {
             </div>
 
             <div className="userinsightbox">
-                <div className="userinsight">User Insight </div>
+                <div className="userinsight"><Link to="/userInsights">User Insights</Link></div>
                 <div className="Download">Download</div>
             </div>
                 

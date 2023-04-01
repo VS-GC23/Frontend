@@ -19,13 +19,30 @@ function Register() {
     const [accountNo, setAccountNo] = useState("");
     const [ifscCode, setIfscCode] = useState("");
     const [irisScan, setIrisScan] = useState("");
+    const [errmssg, setErrmssg] = useState();
     const [thumbPrintScan, setThumbPrintScan] = useState("")
     const [ isSubmitLoading, setIsSubmitLoading] = useState(false);
+    const [aadhaarVerified, setAadhaarVerified] = useState(true);
     const [display1, setDisplay1] = useState("show");
     const [display2, setDisplay2] = useState("dontshow");
     const [display3, setDisplay3] = useState("dontshow");
     const [display4, setDisplay4] = useState("dontshow");
     const [display5, setDisplay5] = useState("dontshow");
+
+    const validateAadhar = ()=>{
+        axios.post("http://52.66.244.109:3001/aadhaar/authenticate",{
+            AadhaarNumber:aadhaarNo,
+            IrisScanCode:irisScan,
+            FingerPrintCode:thumbPrintScan
+        })
+        .then(res => {
+            setAadhaarVerified(true);
+        })
+        .catch(err=>{
+            setErrmssg(err.response.data.message)
+            // console.log(err);
+        })
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -41,6 +58,7 @@ function Register() {
             setDisplay2("dontshow");
             setDisplay3("show");
             setButtonText("Submit");
+            setAadhaarVerified(false);
         }
         else if(heading === "Add Aadhar Details"){
             setIsSubmitLoading(true);
@@ -87,6 +105,7 @@ function Register() {
             setDisplay2("show");
             setDisplay3("dontshow");
             setDisplay4("show");
+            setAadhaarVerified(true);
             setButtonText("Next");
         }
     }
@@ -171,9 +190,27 @@ function Register() {
                         <input id="thumbPrintScan" type="text" placeholder='Upload Thumbprint Scan' value={thumbPrintScan} onChange={(e)=>{setThumbPrintScan(e.target.value)}} />
                     </div>
                 </div>
-                <button id="submit" className="submit" disabled={isSubmitLoading} type="submit">
+
+                <div className={`item-group ${display3}`}>
+                    <div className="form-item form-item-long required">
+                        {/* <div className="label">Thumbprint Scan</div>
+                        <input id="thumbPrintScan" type="text" placeholder='Upload Thumbprint Scan' value={thumbPrintScan} onChange={(e)=>{setThumbPrintScan(e.target.value)}} /> */}
+                        <div onClick={()=>{validateAadhar()}} className='AadhaarValidateBtn'>Validate Aadhaar</div>
+                    </div>
+                </div>
+                {
+                    aadhaarVerified && 
+                    <button id="submit" className="submit" disabled={isSubmitLoading} type="submit">
                     {buttonText} {isSubmitLoading && <AiOutlineLoading size={15} />}
                 </button>
+                }
+
+            <div className={`item-group ${display3}`}>
+                <div className="form-item form-item-long errmsg">
+                    {errmssg}
+                </div>
+            </div>
+                
 
                 <div className={`item-group ${display5}`}>
                     <div className="form-item form-item-long">
