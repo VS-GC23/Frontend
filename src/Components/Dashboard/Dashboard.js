@@ -15,8 +15,15 @@ function Dasboard() {
   const { isLoggedIn } = usercontext;
   const [options, setOptions] = useState(0);
 
+  
   return (
     <div>
+      { !isLoggedIn ? (
+          <div><Navigate to="/login" /></div>
+          ) :
+          ""
+      }
+
         <div className="navbarHome">
             <div className="Homeheading">FinTech</div>
             <div className="Logout"><Link to="/Logout">Logout</Link></div>
