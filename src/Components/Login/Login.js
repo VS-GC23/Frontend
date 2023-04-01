@@ -11,8 +11,7 @@ import { Link } from 'react-router-dom';
 function Login() {
 
   const usercontext = useContext(UserContext);
-
-  const { setAccessToken, setIsLoggedIn, isLoggedIn } = usercontext;
+  const { userBank, setUserBank, accessToken, setAccessToken, setIsLoggedIn, isLoggedIn,user, setUser } = usercontext;
   const [email, setEmail] = useState(""); 
   const [password, setPassword] = useState(""); 
   const [isSubmitLoading, setIsSubmitLoading] = useState(false);
@@ -34,6 +33,30 @@ function Login() {
         setIsLoggedIn(true);
         localStorage.setItem("isLoggedIn", true);
         setErrmssg("");
+        if(accessToken){
+          axios.get("http://localhost:8080/user/details",{
+            headers:{
+              "authorization":`Bearer ${accessToken}`
+            }
+          })
+          .then(res => {
+            setUser(res.data);
+            console.log(res);
+            axios.get("http://localhost:8080/user/get-bank-details",{
+              headers:{
+                "authorization":`Bearer ${accessToken}`
+              }
+            })
+            .then( res2 => {
+              setUserBank(res2.data);
+              console.log(userBank);
+            })
+          })
+          .catch(err => {
+            console.log(err)
+          })
+
+        }
 
         
       })

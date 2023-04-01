@@ -27,7 +27,7 @@ function Dasboard() {
 
 
       <div className='DashboardNav'>
-        <div><Link to="/userInsights">User Settings</Link></div>
+      <div><Link to="/userInsights">User Insights</Link></div>
         <div><Link to="/dashboard">Dashboard</Link></div>
         <div><Link to="/payment">Payments</Link></div>
         <div><Link to="/statements">Bank Statements</Link></div>

@@ -10,7 +10,7 @@ function BStatements() {
         </div>
 
         <div className='DashboardNav'>
-          <div>User Settings</div>
+          <div><Link to="/userInsights">User Insights</Link></div>
           <div><Link to="/dashboard">Dashboard</Link></div>
           <div><Link to="/payment">Payments</Link></div>
           <div><Link to="/statements">Bank Statements</Link></div>

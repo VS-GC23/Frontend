@@ -25,7 +25,7 @@
 .LoginLogo img{
     height:300px
 }
-#email, #password{
+#email, #password, #name, #ifscCode, #amount, #description, #investmentid, #mutualFundId, #insuranceid{
     border: 2px solid grey;
 }
 .submit{

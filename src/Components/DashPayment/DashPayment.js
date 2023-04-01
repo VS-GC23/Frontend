@@ -3,6 +3,9 @@ import { useState } from 'react';
 import Payind from './Payind';
 import "./DashPayment.css";
 import { Link } from 'react-router-dom';
+import Payinv from './Payinv';
+import Paymutf from './Paymutf';
+import Payins from './Payins';
 
 function DashPayment() {
 
@@ -18,7 +21,7 @@ function DashPayment() {
         </div>
 
         <div className='DashboardNav'>
-          <div>User Settings</div>
+        <div><Link to="/userInsights">User Insights</Link></div>
           <div><Link to="/dashboard">Dashboard</Link></div>
           <div><Link to="/payment">Payments</Link></div>
           <div><Link to="/statements">Bank Statements</Link></div>
@@ -32,9 +35,9 @@ function DashPayment() {
       </div>
       <div className="Payform">
         {options == 1 && <Payind/>}
-        {/* {options == 2 && <Payind/>}
-        {options == 3 && <Payind/>}
-        {options == 4 && <Payind/>} */}
+        {options == 2 && <Payinv/>}
+        {options == 3 && <Paymutf/>}
+        {options == 4 && <Payins/>}
 
       </div>
     </div>
