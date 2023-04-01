@@ -1,0 +1,97 @@
+.HomeWrapprer{
+    height: 100vh;
+    width: 100vw;
+    overflow:hidden;
+}
+
+.navbarHome{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 1.3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+}
+.navbarHome div{
+    cursor: pointer;
+}
+.navbarHome a{
+    text-decoration: none;
+    color: black;
+}
+.Homeheading {
+    color: lightseagreen;
+    font-weight: bold;
+}
+.Homeabout{
+    background: rgb(97,201,168);
+    background: linear-gradient(90deg, rgba(97,201,168,1) 0%, rgba(97,201,168,1) 62%, rgba(241,199,134,1) 100%);
+    height: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.HomeAbout{
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-family: sans-serif;
+    
+}
+.AboutLine1{
+    margin: 20px;
+    font-size: 1.6rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.HomeAboutImg img{
+    height: 180px;
+    border-radius: 20px 0 20px 0;
+}
+.HowItWorksWrapper{
+    height:55%;
+    width: 100vw;
+}
+.HIWheading{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+.Howitworks{
+    height: 75%;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+.setUpAccount, .UsePaySer, .SecureAccess, .UsefulIns{
+    height: 90%;
+    width:15vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    padding: 0 10px;
+    box-shadow: -6px 0px 28px 0px rgba(0,0,0,0.44);
+    -webkit-box-shadow: -6px 0px 28px 0px rgba(0,0,0,0.44);
+    -moz-box-shadow: -6px 0px 28px 0px rgba(0,0,0,0.44);
+}
+.Cardheading{
+    font-size: 1.3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+}
+.CardBody{
+    height: 50%;
+    font-size: 1.1rem;
+}

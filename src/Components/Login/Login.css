@@ -1,0 +1,39 @@
+.LoginPageWrapper{
+    background-image: url('../../Images/BackgroundLogin.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:92vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.LoginHeading{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+.LoginForm{
+    width: 50%;
+    padding: 20px 30px;
+    padding-left: 0;
+    background-color: #EBEEF1;
+    border-radius: 15px;
+}
+.LoginLogo img{
+    height:300px
+}
+#email, #password{
+    border: 2px solid grey;
+}
+.submit{
+    background-color: crimson;
+}
+.label{
+    font-size: 1.3rem;
+}
+.errmsg{
+    font-size: 1.3rem;
+}

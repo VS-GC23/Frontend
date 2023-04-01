@@ -1,0 +1,19 @@
+.DashPaywrapper{
+    display: flex;
+    flex-direction: column;
+    /* height: 100vh; */
+    justify-content: space-around;
+}
+.PayIndHeading{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+#Payindlogin{
+    border: 2px solid grey;
+    overflow-y: scroll;
+    /* height: 45vh; */
+}
+.Payform{
+    margin-top: 20px;
+}
