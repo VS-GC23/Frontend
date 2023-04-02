@@ -10,7 +10,7 @@ function HistoryIns() {
     const [histinds, setHistinds] = useState([]);
 
     useEffect(()=>{
-        axios.get("http://localhost:8080/payments/get-investments",{
+        axios.get("https://payment-service-fintech-23.apps.fintech-os23.s2yb.p1.openshiftapps.com/payments/get-insurance",{
             headers:{
                 "authorization":`Bearer ${accessToken}`
             }
@@ -30,6 +30,8 @@ function HistoryIns() {
                 <div className="HistoryPayment" key={index}>
                     <div className='histindpay'>Name: {histind.CustomerName}</div>
                     <div className='histindpay'>Account Number: {histind.AccountNumber}</div>
+                    <div className='histindpay'>Insurance ID: {histind.InsuranceID}</div>
+                    <div className='histindpay'>Description: {histind.Description}</div>
                 </div>
             ))
         }

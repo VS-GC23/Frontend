@@ -9,7 +9,7 @@ function HistoryMutf() {
     const [histinds, setHistinds] = useState([]);
 
     useEffect(()=>{
-        axios.get("http://localhost:8080/payments/get-mutualfunds",{
+        axios.get("https://payment-service-fintech-23.apps.fintech-os23.s2yb.p1.openshiftapps.com/payments/get-mutualfunds",{
             headers:{
                 "authorization":`Bearer ${accessToken}`
             }

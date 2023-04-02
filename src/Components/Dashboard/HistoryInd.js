@@ -9,7 +9,7 @@ function HistoryInd() {
     const [histinds, setHistinds] = useState([]);
 
     useEffect(()=>{
-        axios.get("http://localhost:8080/payments/transaction-history",{
+        axios.get("https://payment-service-fintech-23.apps.fintech-os23.s2yb.p1.openshiftapps.com/payments/transaction-history",{
             headers:{
                 "authorization":`Bearer ${accessToken}`
             }

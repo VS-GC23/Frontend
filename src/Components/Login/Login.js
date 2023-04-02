@@ -21,7 +21,7 @@ function Login() {
     const handleSubmit = (e)=>{
       e.preventDefault();
       setIsSubmitLoading(true);
-      axios.post("http://localhost:8080/user/sign-in",{
+      axios.post("https://usermicroservice-fintech-23.apps.fintech-os23.s2yb.p1.openshiftapps.com/user/sign-in",{
         Email: email,
         Password: password
       })
@@ -34,7 +34,7 @@ function Login() {
         localStorage.setItem("isLoggedIn", true);
         setErrmssg("");
         if(accessToken){
-          axios.get("http://localhost:8080/user/details",{
+          axios.get("https://usermicroservice-fintech-23.apps.fintech-os23.s2yb.p1.openshiftapps.com/user/details",{
             headers:{
               "authorization":`Bearer ${accessToken}`
             }
@@ -42,7 +42,7 @@ function Login() {
           .then(res => {
             setUser(res.data);
             console.log(res);
-            axios.get("http://localhost:8080/user/get-bank-details",{
+            axios.get("https://usermicroservice-fintech-23.apps.fintech-os23.s2yb.p1.openshiftapps.com/user/get-bank-details",{
               headers:{
                 "authorization":`Bearer ${accessToken}`
               }

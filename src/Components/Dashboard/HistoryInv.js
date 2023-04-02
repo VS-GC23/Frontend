@@ -10,7 +10,7 @@ function HistoryInv() {
     const [histinds, setHistinds] = useState([]);
 
     useEffect(()=>{
-        axios.get("http://localhost:8080/payments/get-investments",{
+        axios.get("https://payment-service-fintech-23.apps.fintech-os23.s2yb.p1.openshiftapps.com/payments/get-investments",{
             headers:{
                 "authorization":`Bearer ${accessToken}`
             }
@@ -28,7 +28,7 @@ function HistoryInv() {
         {
             histinds.map( (histind,index) => (
                 <div className="HistoryPayment" key={index}>
-                    <div className='histindpay'>Amount: {histind.Amount}</div>
+                    <div className='histindpay'>Amount: {histind.paymentAmount}</div>
                     <div className='histindpay'>Description: {histind.Description}</div>
                     <div className='histindpay'>Account Number: {histind.AccountNumber}</div>
                 </div>

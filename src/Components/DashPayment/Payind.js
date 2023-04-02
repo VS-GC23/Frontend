@@ -43,8 +43,10 @@ function Payind() {
 
       e.preventDefault();
 
+      console.log("sender: "+sender);
+      console.log("receiver: "+receiver);
       // alert(selectedBank);
-      axios.post("",{
+      axios.post("https://payment-service-fintech-23.apps.fintech-os23.s2yb.p1.openshiftapps.com/payments/initialise-payment",{
         sender:sender,
         receiver:receiver,
         paymentAmount:amount,
@@ -55,7 +57,7 @@ function Payind() {
         }
       })
       .then(res => {
-        setIsSubmitLoading(false);
+        setIsSubmitLoading(true);
         setErrmssg("");
       })
       .catch(err => {

@@ -16,7 +16,7 @@ function Payins() {
     const [ isSubmitLoading, setIsSubmitLoading] = useState(false);
 
     const handleSubmit = () => {
-      axios.post("http://localhost:8080/payments/insurance",{
+      axios.post("https://payment-service-fintech-23.apps.fintech-os23.s2yb.p1.openshiftapps.com/payments/insurance",{
         AccountNumber:"",
         IFSCCode:"",
         CustomerName:"",

@@ -9,7 +9,7 @@ function BankPayHist() {
     const [histinds, setHistinds] = useState([]);
 
     useEffect(()=>{
-        axios.get("",{
+        axios.get("https://data-service-microservice-fintech-23.apps.fintech-os23.s2yb.p1.openshiftapps.com/uploadCsv/get-bankstatement",{
             headers:{
                 "authorization":`Bearer ${accessToken}`
             }
@@ -27,10 +27,13 @@ function BankPayHist() {
         {
             histinds.map( (histind,index) => (
                 <div className="HistoryPayment" key={index}>
-                    <div className='histindpay'>Amount: {histind.Amount}</div>
-                    <div className='histindpay'>Description: {histind.Description}</div>
-                    <div className='histindpay'>Recipient Account Number: {histind.RecipientAccountNumber}</div>
-                    <div className='histindpay'>Sender Account Number: {histind.senderAccountNumber}</div>
+                    <div className='histindpay'>Date: {histind.date}</div>
+                    <div className='histindpay'>Time: {histind.time}</div>
+                    <div className='histindpay'>Type: {histind.type}</div>
+                    <div className='histindpay'>Description: {histind.description}</div>
+                    <div className='histindpay'>Debit: {histind.debit}</div>
+                    <div className='histindpay'>Credit: {histind.credit}</div>
+                    <div className='histindpay'>Balance: {histind.balance}</div>
                 </div>
             ))
         }
